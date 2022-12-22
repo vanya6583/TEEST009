@@ -1,0 +1,99 @@
+-- Dev : BIOS Deluxe V0.2
+
+local Flux = loadstring(game:HttpGet"https://raw.githubusercontent.com/Simak90/pfsetcetc/main/fluxed.lua")()
+
+local win = Flux:Window("BIOS Deluxe", "Version: V0.2", Color3.fromRGB(255, 110, 48), Enum.KeyCode.LeftControl)
+local tab = win:Tab("Charecter", "http://www.roblox.com/asset/?id=11879349471")
+tab:Label("By BUNBASTER12BLASTER")
+tab:Line()
+tab:Label("SpeedPower")
+tab:Slider("Speed", "xX27000_80500Xx", 16, 100,16,function(spe)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = spe
+end)
+tab:Line()
+tab:Label("JumpPower")
+tab:Slider("Jump", "xX27000_80500Xx", 50, 100,50,function(tenya)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = tenya
+end)
+tab:Line()
+local tab = win:Tab("Combat", "http://www.roblox.com/asset/?id=11879349471")
+tab:Button("Aim&Esp", "xX27000_80500Xx", function()
+
+end)
+tab:Button("BION", "xX27000_80500Xx", function()
+Flux:Notification("Sorry, BION is for dev's", "Ok, so sad:(")
+end)
+local tab = win:Tab("Command's", "https://www.roblox.com/library/11879349471")
+tab:Line()
+tab:Label("Prefix ^")
+tab:Button("kill *PlayerName*", "xX27000_80500Xx", function()
+Flux:Notification("Prefix ^ Type ^kill *playername*", "Ok")
+wait(0.1)
+game.Players.LocalPlayer.Chatted:connect(function(msg)
+if msg:sub(1, 6) == "^kill " then
+    local player
+    for i, plr in ipairs(game.Players:GetPlayers()) do
+    if string.lower(plr.Name):sub(1, string.len(msg:sub(7))) == string.lower(msg:sub(7)) then
+        player = plr.Name
+    end
+    end
+    wait(0.1)
+        for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+        if v.name == "Sword" then
+            v.Parent = game.Players.LocalPlayer.Character
+        end
+        wait(0.1)
+        local plq = game.Players.LocalPlayer
+        local olz = plq.Character.HumanoidRootPart.CFrame
+    wait(0.01)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player].HumanoidRootPart.CFrame
+    wait(0.01)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player].HumanoidRootPart.CFrame
+    wait(0.01)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player].HumanoidRootPart.CFrame
+    wait(0.01)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player].HumanoidRootPart.CFrame
+    wait(0.01)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player].HumanoidRootPart.CFrame
+    wait(0.1)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player].HumanoidRootPart.CFrame
+    wait(0.1)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player].HumanoidRootPart.CFrame
+    wait(0.1)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player].HumanoidRootPart.CFrame
+    wait(0.1)
+    plq.Character.HumanoidRootPart.CFrame = olz
+    end
+end
+end)
+
+    end    
+end)
+tab:Button("goto *PlayerName*", "xX27000_80500Xx", function()
+Flux:Notification("Prefix ^ Type ^goto *playername*")
+wait(0.1)
+            game.Players.LocalPlayer.Chatted:connect(function(msg)
+if msg:sub(1, 6) == "^goto " then
+    local player
+    for i, plr in ipairs(game.Players:GetPlayers()) do
+    if string.lower(plr.Name):sub(1, string.len(msg:sub(7))) == string.lower(msg:sub(7)) then
+        player = plr.Name
+    end
+    end
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player].HumanoidRootPart.CFrame
+end
+end)
+    end    
+})
+end)
+tab:Button("unview *PlayerName*", "xX27000_80500Xx", function()
+Flux:Notification("Sorry, this function not working", "Ok, so sad:(")
+end)
+tab:Button("fling *PlayerName*", "xX27000_80500Xx", function()
+Flux:Notification("Sorry, this function not working", "Ok, so sad:(")
+end)
+tab:Button("bomb *PlayerName*", "xX27000_80500Xx", function()
+Flux:Notification("Sorry, this function not working", "Ok, so sad:(")
+end)
+tab:Label("Prefix ^")
+tab:Line()
