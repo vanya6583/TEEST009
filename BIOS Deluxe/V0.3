@@ -1,0 +1,139 @@
+ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+ local Window = Library.CreateLib("BIOS Deluxe V0.2", "Sentinel")
+ local Tab = Window:NewTab("Charecter")
+ local Section = Tab:NewSection("SpeedPower")
+ Section:NewSlider("Change Speed", "0_0", 250, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+ local Section = Tab:NewSection("JumpPower")
+ Section:NewSlider("Change Jump", "0_0", 200, 50, function(se) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = se
+end)
+ local Section = Tab:NewSection("InfJump Soon")
+ local Tab = Window:NewTab("Combat")
+ local Section = Tab:NewSection("Aim And Esp")
+ local Tab = Window:NewTab("Command's")
+ local Section = Tab:NewSection("kill *playername*")
+ Section:NewButton("ButtonText", "ButtonInfo", function()
+    game.Players.LocalPlayer.Chatted:connect(function(msg)
+if msg:sub(1, 6) == "^kill " then
+    local player
+    for i, plr in ipairs(game.Players:GetPlayers()) do
+    if string.lower(plr.Name):sub(1, string.len(msg:sub(7))) == string.lower(msg:sub(7)) then
+        player = plr.Name
+    end
+    end
+    wait(0.1)
+        for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+        if v.name == "Sword" then
+            v.Parent = game.Players.LocalPlayer.Character
+        end
+        wait(0.1)
+        local plq = game.Players.LocalPlayer
+        local olz = plq.Character.HumanoidRootPart.CFrame
+    wait(0.01)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player].HumanoidRootPart.CFrame
+    wait(0.01)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player].HumanoidRootPart.CFrame
+    wait(0.01)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player].HumanoidRootPart.CFrame
+    wait(0.01)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player].HumanoidRootPart.CFrame
+    wait(0.01)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player].HumanoidRootPart.CFrame
+    wait(0.1)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player].HumanoidRootPart.CFrame
+    wait(0.1)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player].HumanoidRootPart.CFrame
+    wait(0.1)
+    plq.Character.HumanoidRootPart.CFrame = olz
+    end
+end
+end)
+end)
+ local Section = Tab:NewSection("goto *playername*")
+ Section:NewButton("ButtonText", "ButtonInfo", function()
+                game.Players.LocalPlayer.Chatted:connect(function(msg)
+if msg:sub(1, 6) == "^goto " then
+    local player
+    for i, plr in ipairs(game.Players:GetPlayers()) do
+    if string.lower(plr.Name):sub(1, string.len(msg:sub(7))) == string.lower(msg:sub(7)) then
+        player = plr.Name
+    end
+    end
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player].HumanoidRootPart.CFrame
+end
+end)
+end)
+ local Section = Tab:NewSection("rejoin")
+ Section:NewButton("^rejoin", "To server", function()
+for i,v in pairs(game.Players:GetPlayers()) do
+    game.Players[v.Name].Chatted:connect(function(chat)
+        if chat:match("^rejoin") then
+            game:GetService("TeleportService"):Teleport(1215581239, LocalPlayer)
+        end
+    end)
+end
+end)
+Section:NewButton("Another Rejoin", "Fast", function()
+    game:GetService("TeleportService"):Teleport(1215581239, LocalPlayer)
+end)
+ local Tab = Window:NewTab("Teleport")
+ local Section = Tab:NewSection("Tower Up")
+
+ Section:NewButton("Red Up", ";)", function()
+
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-101.571044921875, 129.1998748779297, 0.02412746287882328)
+end)
+
+ Section:NewButton("Green Up", ";)", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2.059662342071533, 129.19985961914062, -101.22891998291016)
+end)
+
+ Section:NewButton("Yellow Up", ";)", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(97.623291015625, 129.1998748779297, 0.20939277112483978)
+end)
+
+ Section:NewButton("Blue Up", ";)", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.7494234442710876, 129.19985961914062, 100.97635650634766)
+end)
+
+ local Section = Tab:NewSection("Tower Down")
+
+ Section:NewButton("Red Down", ";)", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-132.31507873535156, 23.60004425048828, -0.44465380907058716)
+end)
+
+ Section:NewButton("Green Down", ";)", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.4617762565612793, 23.600013732910156, -127.0892333984375)
+end)
+
+ Section:NewButton("Yellow Down", ";)", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(131.30059814453125, 23.600013732910156, 5.165349006652832)
+end)
+  Section:NewButton("Blue Down", ";)", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6.754860877990723, 23.600034713745117, 127.21406555175781)
+end)
+
+ local Section = Tab:NewSection("Other")
+ Section:NewButton("Bridge Middle", "Very Very bad my boy", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.4194936156272888, 131.39996337890625, -0.034309759736061096)
+end)
+ Section:NewButton("Spectators", "NNB", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-14.594708442687988, 326.5445861816406, 1.3450276851654053)
+end)
+ local Section = Tab:NewSection("To Player")
+ Section:NewTextBox("Player Name", "Teleport To Player", function(txt)
+local ooooooof = TextBox.Text
+local plr1 = game.Players.LocalPlayer.Character
+local plr2 = game.Workspace:FindFirstChild(ooooooof)
+plr1.HumanoidRootPart.CFrame = plr2.HumanoidRootPart.CFrame * CFrame.new(0,2,0)
+end)
+ Section:NewButton("Spectators", "NNB", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-14.594708442687988, 326.5445861816406, 1.3450276851654053)
+end)
+ local Tab = Window:NewTab("Music Player")
+ local Section = Tab:NewSection("MP")
+
+ local Tab = Window:NewTab("Cookie")
+ local Section = Tab:NewSection("About")
